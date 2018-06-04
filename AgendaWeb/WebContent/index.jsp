@@ -3,9 +3,9 @@
     <%
     String email = request.getParameter("txtEmail");
     String senha = request.getParameter("txtSenha");
-    String frase = request.getAttribute("frase").toString();
+  /*   String frase = request.getAttribute("frase").toString();
     
-    int soma = (int)request.getAttribute("v1") + (int)request.getAttribute("v2");
+    int soma = (int)request.getAttribute("v1") + (int)request.getAttribute("v2"); */
     %>
     
     
@@ -22,8 +22,9 @@
 		<h1>Resultado:</h1>
 		<h3>Email: <%= email %></h3>
 		<h3>Senha: <%= senha %></h3>
-		<h3>Frase: <%= frase%></h3>
-		<h3>Soma: <%= soma %></h3>
+		
+		<%-- <h3>Frase: <%= frase%></h3>
+		<h3>Soma: <%= soma %></h3> --%>
 
 	
 	<%-- 	<h1>Resultado:</h1>

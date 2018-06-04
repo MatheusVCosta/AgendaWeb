@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="ISO-8859-1">
+		<meta charset="ISO-8859-1">
 		<title>Insert title here</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
 	</head>
-	<body>
-		<form method="POST" action="Autentica">
-			<label for="txtEmail">Nome: </label>
-			<input type="email" required="required" name="txtEmail"><p>
+	<body style="background:#084950">
+		<header>
+			<div style="background-color:#48e6d6; height:100px; box-shadow: 0px 9px 10px #48e6d680;">
+				<div class="container" >
+					<div class="row">
+						<div class="col-md-12 col-md-offset-2">
+							<div style="margin-left:-400px; ">
+								<h1 style="color:white;"> UaiContatos</h1>
+								
+							</div>
+						</div>	
+					</div>
+				</div>
 			
-			<label for="txtSenha">Senha: </labe>
-			<input type="password" required="required" name="txtSenha"><p>
-			
-			<input type="submit" value="Login">
-			
-			
-		</form>
-		<p>
-			<a href="Autentica?x=10&y=20&nome=BES">teste</a>
-		</p>
+			</div>
+		</header>
+		<div style="margin-top:-80px;">
+			<div class="container" >
+				<div class="row">
+				<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<div class="well">
+							<form method="POST" action="Autentica">
+								<img src="imagens/user64.png">
+								<div class="form-group">
+									<label>Nome:</label>
+									<input class="form-control" type="email" required="required" name="txtEmail">
+								</div>
+								<div class="form-group">
+									<label>Senha:</labe>
+									<input class="form-control" type="password" required="required" name="txtSenha">
+								</div>
+								<div class="form-group">
+									<input class="btn btn-success"type="submit" value="Login">
+								</div>
+								<p>Não possui cadastro? Cadastra-se <a href="#">aqui</a></p>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
