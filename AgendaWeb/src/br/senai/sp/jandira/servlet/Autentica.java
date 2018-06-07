@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.senai.sp.jandira.dao.UsuarioDao;
 import br.senai.sp.jandira.modelo.Usuario;
@@ -32,6 +33,8 @@ public class Autentica extends HttpServlet implements Servlet {
 		String email = request.getParameter("txtEmail");
 		String senha =  request.getParameter("txtSenha");
 		
+		HttpSession sessao = null;
+		
 		UsuarioDao usuarioDAO = new UsuarioDao();
 		Usuario usuario = new Usuario();
 		
@@ -41,13 +44,14 @@ public class Autentica extends HttpServlet implements Servlet {
 			RequestDispatcher rd = request.getRequestDispatcher("login.html");
 			rd.forward(request, response);
 		}else{
+			sessao = request.getSession();
+			sessao.setAttribute("usuario", usuario);
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-			rd.forward(request, response);
+			rd.forward(request, response);//encaminhar para o index.jsp e envia txtEmail,senha e frase
 		}
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-		rd.forward(request, response);//encaminhar para o index.jsp e envia txtEmail,senha e frase
+	
 
 
 		

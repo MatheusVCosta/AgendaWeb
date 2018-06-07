@@ -13,6 +13,10 @@ public class UsuarioDao {
 		private ResultSet rs;
 		
 		
+		public void setUsuario(Usuario usuario) {
+			this.usuario = usuario;
+			
+		}
 		public Usuario autenticar(String email, String senha){
 			usuario= null;
 			stm = null;
@@ -43,5 +47,30 @@ public class UsuarioDao {
 			
 			return usuario;
 			
+		}
+		public boolean gravar(){
+			
+			boolean status = true;
+			
+			stm = null;
+			String sql = "INSERT INTO usuarios (nome, email, senha, cidade, dtNasc) VALUES(?,?,?,?,?)";
+			
+			try{
+				stm = Conexao.getConexao().prepareStatement(sql);
+				stm.setString(1, usuario.getNome());
+				stm.setString(2, usuario.getEmail());
+				stm.setString(3, usuario.getSenha());
+				stm.setString(4, usuario.getCidade());
+				stm.setString(5, usuario.getDtNasc());
+				stm.execute();
+				
+				Conexao.getConexao().close();
+				
+				
+			}catch(Exception erro){
+				erro.printStackTrace();
+				status = false;
+			}
+			return status;
 		}
 }
