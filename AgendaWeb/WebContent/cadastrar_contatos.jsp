@@ -52,7 +52,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div class="panel panel-primary" style="margin-top:20px; ">
+				<div class="panel panel-primary" style="margin-top:20px;">
 				 	<div class="panel-heading"><img style="margin-right:10px;" src="imagens/user32.png" height="24px" width="24px" ><strong>Usuário</strong></div>
 				 	<div class="panel-body">
 				    	<p><strong>Usuário:</strong><%=u.getNome()%></p>
@@ -68,43 +68,90 @@
 				 	<div class="panel-body">
 				    	<ul class="nav">
 				    		<li class="nav-item"><a href="index.jsp">Home</a></li>
-				    		<li class="nav-item"><a href="cadastrar_contatos.jsp">Cadastrar contato</a></li>
+				    		<li class="nav-item"><a href="#">Cadastrar contato</a></li>
 				    	</ul>
 				 	</div>
 				</div>
 			</div>
 			<div class="col-md-9">
-				<div class="panel panel-primary" style="margin-top:20px; ">
-				 	<div class="panel-heading"><img style="margin-right:10px;" src="imagens/agenda2.png" height="24px" width="24px" ><strong>Meus contatos</strong></div>
-				 	<div class="panel-body">
-				    	<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Nome</th>
-									<th>E-mail</th>
-									<th></th>
-									<th></th>
-								</tr>
-							</thead>	
-								<%for(Contatos contato : listaContatos){%>
-									<tr>
-										<td><%= contato.getId()%></td>
-										<td><%= contato.getNome()%></td>
-										<td><%= contato.getEmail()%></td>
-										<td><a href="editar_contato.jsp?id=<%= contato.getId()%>"><img src="imagens/edit.png" height="24px" width="24px" ></a></td>
-										<td><a href="excluir_contato.jsp?id=<%= contato.getId()%>"><img src="imagens/del.png" height="24px" width="24px" ></a></td>
-									</tr>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3>Vamos efetuar o seu cadastro</h3>
+					</div>
+					<div class="panel body">
+						<form method="post" action="GravarContato">
+						<fieldset>
+							<legend>Dados gerais:</legend>
+							<div class="form-row">
+								<div class="form group col-md-6">
+									<label for="txtName">Nome</</label>
+									<input type="text" name="txtName" class="form-control">
+								</div>
+								<div class="form group col-md-3">
+									<label for="txtName">Data de nascimento</</label>
+									<input type="text" name="txtName" class="form-control">
+								</div>
+								<div class="form group col-md-3">
+									<label for="cbSexo">Sexo</</label>
+									<select name="cbSexo" class="form-control">
+										<optio value="s">Selecione</option>
+										<option value="f">Feminino</option>
+										<option value="m">Masculino</option>
+									</select>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Dados de Contatos:</legend>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="txtEmail">E-mail</</label>
+									<input type="email" name="txtEmail" class="form-control">
+								</div>
+								<div class="form-group col-md-3">
+									<label for="txtTelefone">Telefone</</label>
+									<input type="text" name="txtTelefone" class="form-control">
+								</div>
+								<div class="form-group col-md-3">
+									<label for="txtCelular">Celular</</label>
+									<input type="text" name="txtCelular" class="form-control">
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Endereço:</legend>
+							<div class="form-row">
+								<div class="form-group col-md-8">
+									<label for="txtLogradouro">Logradouro</</label>
+									<input type="text" name="txtLogradouro" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label for="txtBairro">Bairro</</label>
+									<input type="text" name="txtBairro" class="form-control">
+								</div>
 								
-								<%}%> 
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="txtLogradouro">Logradouro</</label>
+									<input type="text" name="txtLogradouro" class="form-control">
+								</div>
+								<div class="form-group col-md-3">
+									<label for="txtBairro">Bairro</</label>
+									<input type="text" name="txtBairro" class="form-control">
+								</div>
+								<div class="form-group col-md-3">
+									<label for="txtBairro">Bairro</</label>
+									<input type="text" name="txtBairro" class="form-control">
+								</div>
 								
-								
-								
-						</table>
-				 	</div>
+							</div>
+						</fieldset>
+						</form>
+					</div>
+
 				</div>
 			</div>
-		</div>
 	</div>
 	<div class="container" style="color:white;">
 		<div class="container-fluid">
