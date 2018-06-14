@@ -2,5 +2,5 @@
     pageEncoding="ISO-8859-1"%>
 <% 
 	session.invalidate();
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("login.html");
 %>
