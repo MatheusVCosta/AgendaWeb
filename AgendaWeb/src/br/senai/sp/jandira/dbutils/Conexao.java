@@ -10,7 +10,7 @@ public class Conexao {
 	public static Connection getConexao(){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			String dbURL = "jdbc:mysql://10.107.134.3:3306/agenda?useSSL=FALSE";
+			String dbURL = "jdbc:mysql://10.107.140.2:3306/agenda?useSSL=FALSE";
 			con = DriverManager.getConnection(dbURL, "root", "bcd127");
 			System.out.println("Banco Conectado");
 		}

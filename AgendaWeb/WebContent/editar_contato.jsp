@@ -20,11 +20,9 @@
 		Contatos contato = new Contatos();
 		contato = contatoDao.getContato(Integer.parseInt(request.getParameter("id")));
 		
-		/* String email = request.getParameter("txtEmail");
-		String senha = request.getParameter("txtSenha"); */
-
-		/*String frase = request.getAttribute("frase").toString();    
-		int soma = (int)request.getAttribute("v1") + (int)request.getAttribute("v2"); */
+		System.out.println(contatoDao.getContato(Integer.parseInt(request.getParameter("id"))));
+		
+		
 %>
 <!DOCTYPE html>
 <html>
@@ -80,12 +78,13 @@
 						<h3>Vamos efetuar o seu cadastro</h3>
 					</div>
 					<div class="panel body">
-						<form method="get" action="GravarContato">
+						<form method="get" action="AtualizarContato">
 						<fieldset>
 							<legend>Dados gerais:</legend>
 							<div class="form-row">
 								<div class="form group col-md-6">
 									<input type="hidden" name="txtIdUsuario" value="<%=u.getId()%>">
+									<input type="hidden" name="txtIdContato" value="<%=u.getId()%>">
 									<label for="txtNome">Nome</</label>
 									<input type="text" name="txtNome" class="form-control" style="width: 400px;" value="<%=contato.getNome() %>">
 								</div>
